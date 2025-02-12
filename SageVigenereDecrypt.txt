@@ -1,0 +1,246 @@
+a = var('a'); 
+b = var('b'); 
+c = var('c'); 
+d = var('d'); 
+e = var('e'); 
+f = var('f'); 
+g = var('g'); 
+h = var('h'); 
+i = var('i'); 
+j = var('j'); 
+k = var('k'); 
+l = var('l'); 
+m = var('m'); 
+n = var('n'); 
+o = var('o'); 
+p = var('p'); 
+q = var('q'); 
+r = var('r'); 
+s = var('s'); 
+t = var('t'); 
+u = var('u'); 
+v = var('v'); 
+w = var('w'); 
+x = var('x'); 
+y = var('y'); 
+z = var('z');
+def numberify(X):
+    K = ZZ^len(X)
+    V = K(0)
+    for I in range(len(X)):
+        if X[I] == a:
+            V[I] = 0
+        if X[I] == b:
+            V[I] = 1
+        if X[I] == c:
+            V[I] = 2
+        if X[I] == d:
+            V[I] = 3
+        if X[I] == e:
+            V[I] = 4
+        if X[I] == f:
+            V[I] = 5
+        if X[I] == g:
+            V[I] = 6
+        if X[I] == h:
+            V[I] = 7
+        if X[I] == i:
+            V[I] = 8
+        if X[I] == j:
+            V[I] = 9
+        if X[I] == k:
+            V[I] = 10
+        if X[I] == l:
+            V[I] = 11
+        if X[I] == m:
+            V[I] = 12
+        if X[I] == n:
+            V[I] = 13
+        if X[I] == o:
+            V[I] = 14
+        if X[I] == p:
+            V[I] = 15
+        if X[I] == q:
+            V[I] = 16
+        if X[I] == r:
+            V[I] = 17
+        if X[I] == s:
+            V[I] = 18
+        if X[I] == t:
+            V[I] = 19
+        if X[I] == u:
+            V[I] = 20
+        if X[I] == v:
+            V[I] = 21
+        if X[I] == w:
+            V[I] = 22
+        if X[I] == x:
+            V[I] = 23
+        if X[I] == y:
+            V[I] = 24
+        if X[I] == z:
+            V[I] = 25
+    return V
+def intshift(X,a):
+    K = ZZ^len(X)
+    V = K(0)
+    for i in range(len(X)):
+        V[i] = X[(i+a)% len(X)]
+    return V
+def numberofentries(N,a):
+    t = 0
+    for i in range(len(N)):
+        if N[i] == a:
+            t = t+1
+    return t
+def findlength(N,T):
+    K = ZZ^T
+    V = K(0)
+    for i in range(T):
+        V[i] = numberofentries(N - intshift(N,i),0)
+    return V
+def realshift(X,a):
+    K = RR^len(X)
+    V = K(0)
+    for i in range(len(X)):
+        V[i] = X[(i-a)% len(X)]
+    return V
+def specialvector(X,l,a):
+    K = ZZ^(floor(len(X)/l))
+    W = K(0)
+    for i in range(floor(len(X)/l)):
+        W[i] = X[l*i+a]
+    return W
+def Wvector(X,l,a):
+    K = RR^26
+    W = K(0)
+    for i in range(26):
+        W[i] = numberofentries(specialvector(X,l,a),i)/(floor(len(X)/l))
+    return W
+A = vector([.082,.015,.028,.043,.127,.022,.020,.061,.070,.002,.008,.040,.024,.067,.075,.019,.001,.060,.063,.091,.028,.010,.023,.001,.020,.001])
+def findshift(N,l,a):
+    for i in range(26):
+        print(Wvector(N,l,a).dot_product(realshift(A,i)))
+def plaintext(N,l,v):
+    K = ZZ^len(N)
+    P = K(0)
+    for a in range(l):
+        for i in range(floor(len(N)/l)):
+            P[l*i+a] = (N[l*i+a]-v[a])%26
+    return P
+def denumberify(X):
+    K = PolynomialRing(QQ, 26, 'abcdefghijklmnopqrstuvwxyz')^len(X)
+    V = K(0)
+    for I in range(len(X)):
+        if X[I] == 0:
+            V[I] = a
+        if X[I] == 1:
+            V[I] = b
+        if X[I] == 2:
+            V[I] = c
+        if X[I] == 3:
+            V[I] = d
+        if X[I] == 4:
+            V[I] = e
+        if X[I] == 5:
+            V[I] = f
+        if X[I] == 6:
+            V[I] = g
+        if X[I] == 7:
+            V[I] = h
+        if X[I] == 8:
+            V[I] = i
+        if X[I] == 9:
+            V[I] = j
+        if X[I] == 10:
+            V[I] = k
+        if X[I] == 11:
+            V[I] = l
+        if X[I] == 12:
+            V[I] = m
+        if X[I] == 13:
+            V[I] = n
+        if X[I] == 14:
+            V[I] = o
+        if X[I] == 15:
+            V[I] = p
+        if X[I] == 16:
+            V[I] = q
+        if X[I] == 17:
+            V[I] = r
+        if X[I] == 18:
+            V[I] = s
+        if X[I] == 19:
+            V[I] = t
+        if X[I] == 20:
+            V[I] = u
+        if X[I] == 21:
+            V[I] = v
+        if X[I] == 22:
+            V[I] = w
+        if X[I] == 23:
+            V[I] = x
+        if X[I] == 24:
+            V[I] = y
+        if X[I] == 25:
+            V[I] = z
+    return V
+
+def findmaxshift(N,l,a):
+	K = ZZ^len(N)
+	V = K(0)
+	for i in range(len(N)):
+		V[i] = Integer(Wvector(N,l,a).dot_product(realshift(A,i)))
+	return V
+
+C = vector([x,k,j,u,r,o,w,m,l,l,p,x,w,z,n,p,i,m,b,v,b,q,j,c,n,o,w,x,p,c,c,h,h,v,v,f,v,s,l,l,f,v,x,h,a,z,i,t,y,x,o,h,u,l,x,q,o,j,a,x,e,l,x,z,x,m,y,j,a,q,f,s,t,s,r,u,l,h,h,u,c,d,s,k,b,x,k,n,j,q,i,d,a,l,l,p,q,s,l,l,u,h,i,a,q,f,p,b,p,c,i,d,s,v,c,i,h,w,h,w,e,w,t,h,b,t,x,r,l,j,n,r,s,n,c,i,h,u,v,f,f,u,x,v,o,u,k,j,l,j,s,w,m,a,q,f,v,j,w,j,s,d,y,l,j,o,g,j,x,d,b,o,x,a,j,u,l,t,u,c,p,z,m,p,l,i,w,m,l,u,b,z,x,v,o,o,d,y,b,a,f,d,s,k,x,g,q,f,a,d,s,h,x,n,x,e,h,s,a,r,u,o,j,a,q,f,p,f,k,n,d,h,s,a,a,f,v,u,l,l,u,w,t,a,q,f,r,u,p,w,j,r,s,z,x,g,p,f,u,t,j,q,i,y,n,r,x,n,y,n,t,w,m,h,c,u,k,j,f,b,i,r,z,s,m,e,h,h,s,j,s,h,y,o,n,d,d,z,z,n,t,z,m,p,l,i,l,r,w,n,m,w,m,l,v,u,r,y,o,n,t,h,u,h,a,b,w,n,v,w])
+
+N = numberify(C)
+
+findlength(N, 25)
+
+#(330, 15, 17, 13, 10, 23, 5, 15, 20, 5, 25, 10, 10, 10, 9, 21, 8, 14, 21, 4, 28, 10, 11, 9, 8) the outliers are 20 at 28 coincidence, 10 at 25 coincidence, 5 at 23 coincidence. at our key length is 5
+
+#findshift(N,5,4) uncommented to not interrupt the return
+
+#Output for a=0
+#0.0444545454545455
+#0.0683636363636364 *
+#0.0388333333333333
+#0.0296212121212121
+#0.0382121212121212
+#0.0411363636363636
+#0.0349393939393939
+#0.0312272727272727
+#0.0357575757575758
+#0.0299696969696970
+#0.0356969696969697
+#0.0370757575757576
+#0.0492424242424242
+#0.0400757575757576
+#0.0421818181818182
+#0.0406212121212121
+#0.0474090909090909
+#0.0393787878787879
+#0.0313636363636364
+#0.0313333333333333
+#0.0409090909090909
+#0.0331363636363636
+#0.0299393939393939
+#0.0440909090909091
+#0.0357121212121212
+#0.0303181818181818
+#The first letter X was most likely to have been shifted by 1 to W
+#The second letter was shifted by 3 from K to H
+#Third by 5 J to E
+#Fourth by 7 U to N
+#Fifth by 9 R to I 
+# The first five letters likely decrypt to WHENI, the key is likely BDFHJ (13579)
+
+V=vector([1,3,5,7,9])
+
+P=plaintext(N,5,V)
+
+denumberify(P)
+
+#(w, h, e, n, i, n, t, h, e, c, o, u, r, s, e, o, f, h, u, m, a, n, e, v, e, n, t, s, i, t, b, e, c, o, m, e, s, n, e, c, e, s, s, a, r, y, f, o, r, o, n, e, p, e, o, p, l, e, t, o, d, i, s, s, o, l, v, e, t, h, e, p, o, l, i, t, i, c, a, l, b, a, n, d, s, w, h, i, c, h, h, a, v, e, c, o, n, n, e, c, t, e, d, t, h, e, m, w, i, t, h, a, n, o, t, h, e, r, a, n, d, t, o, a, s, s, u, m, e, a, m, o, n, g, t, h, e, p, o, w, e, r, s, o, f, t, h, e, e, a, r, t, h, t, h, e, s, e, p, a, r, a, t, e, a, n, d, e, q, u, a, l, s, t, a, t, i, o, n, t, o, w, h, i, c, h, t, h, e, l, a, w, s, o, f, n, a, t, u, r, e, a, n, d, o, f, n, a, t, u, r, e, s, g, o, d, e, n, t, i, t, l, e, t, h, e, m, a, d, e, c, e, n, t, r, e, s, p, e, c, t, t, o, t, h, e, o, p, i, n, i, o, n, s, o, f, m, a, n, k, i, n, d, r, e, q, u, i, r, e, s, t, h, a, t, t, h, e, y, s, h, o, u, l, d, d, e, c, l, a, r, e, t, h, e, c, a, u, s, e, s, w, h, i, c, h, i, m, p, e, l, t, h, e, m, t, o, t, h, e, s, e, p, a, r, a, t, i, o, n)

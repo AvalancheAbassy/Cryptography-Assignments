@@ -1,0 +1,17 @@
+Plaintext solutions and keys:
+
+2.14 #1
+
+Plaintext: watchoutforbrutus 
+
+Shift: 2
+
+2.14 #9
+
+Plaintext:
+
+(w, h, e, n, i, n, t, h, e, c, o, u, r, s, e, o, f, h, u, m, a, n, e, v, e, n, t, s, i, t, b, e, c, o, m, e, s, n, e, c, e, s, s, a, r, y, f, o, r, o, n, e, p, e, o, p, l, e, t, o, d, i, s, s, o, l, v, e, t, h, e, p, o, l, i, t, i, c, a, l, b, a, n, d, s, w, h, i, c, h, h, a, v, e, c, o, n, n, e, c, t, e, d, t, h, e, m, w, i, t, h, a, n, o, t, h, e, r, a, n, d, t, o, a, s, s, u, m, e, a, m, o, n, g, t, h, e, p, o, w, e, r, s, o, f, t, h, e, e, a, r, t, h, t, h, e, s, e, p, a, r, a, t, e, a, n, d, e, q, u, a, l, s, t, a, t, i, o, n, t, o, w, h, i, c, h, t, h, e, l, a, w, s, o, f, n, a, t, u, r, e, a, n, d, o, f, n, a, t, u, r, e, s, g, o, d, e, n, t, i, t, l, e, t, h, e, m, a, d, e, c, e, n, t, r, e, s, p, e, c, t, t, o, t, h, e, o, p, i, n, i, o, n, s, o, f, m, a, n, k, i, n, d, r, e, q, u, i, r, e, s, t, h, a, t, t, h, e, y, s, h, o, u, l, d, d, e, c, l, a, r, e, t, h, e, c, a, u, s, e, s, w, h, i, c, h, i, m, p, e, l, t, h, e, m, t, o, t, h, e, s, e, p, a, r, a, t, i, o, n)
+
+Key:
+
+BDFHJ (Numerically 13579)
