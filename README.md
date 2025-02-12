@@ -1,0 +1,1 @@
+These are assignments that I completed for my MCS 425 Cryptography class. The programs I created include: A matrix mod inverse calculator for RSA attacks (Homework 5) and bruteforce algorithims for Cesar ciphers.
